@@ -1,0 +1,24 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.haikei {
+    width: 100%;
+    height: 1024px;
+    background: linear-gradient(
+      to top,
+      #d59f62 0%,
+      #a9783f 50%,
+      #734e30 100%
+    );
+}
+
+.kensaku {
+  margin-left: 1000px;
+}
+h3{
+  color: white;
+  text-align:center;
+  font-weight: lighter;
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'  
+}
