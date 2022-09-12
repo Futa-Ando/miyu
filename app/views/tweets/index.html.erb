@@ -1,20 +1,54 @@
-<div class="haikei">
-  
-  <div class="kensaku">
-    <h3>投稿を検索</h3>
-    <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-      <%= text_field_tag :search %>
-      <%= submit_tag '検索する'  %>
-    <% end %>
-  </div>
-  <h3>Tweet一覧</h3>
+<%= stylesheet_link_tag 'tweets', :media => "all" %>
 
+<div class="kensaku">
+  <h3>投稿を検索</h3>
+  <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag '検索する'  %>
+  <% end %>
+</div>
+
+<p class="about">
+  <b>About  Enjoyalone</b>
+</p>
+<p class="font-small">
+「おひとり様ですか？」
+<br>
+こう聞かれた経験がない方へ
+<br>
+たまには自分だけの空間・時間を楽しんでみてはどうですか？
+<br>
+このサイトは「おひとり様」に挑戦したい、もっと楽しみたい人のためのコミュニティです。
+<br>
+あなただけの「1人○○」を見つけてみましょう。
+</p>
+
+<p class="content">
+  <b>Content</b>
+</p>
+
+<div class="food-pic">
+</div>
+
+<div class="food">
+  <p>Food</p>
+  <p class="food-small">
+  「1人ランチ」や「1人焼肉」、「1人飲み」など
+  <br>
+  普段誰かと足を運んで会話をしながら飲食する機会が多いのでは？
+  <br>
+  たまには1人で「食」だけを楽しむ時間にしてみてはどうでしょうか。
+  </p>
+</div>
+
+
+<h3>Tweet一覧</h3>
 
   <div class="tweets-container">
     <% @tweets.each do |t| %>
       <div class="tweet">
         <%= image_tag t.image_url, size: "250x200" if t.image? %>
-        <%= t.user.email %>
+        <%= t.user.name %>
         <%= t.title %>
         <%= t.body %>
         <% if user_signed_in? %>
@@ -38,5 +72,4 @@
         <%= button_to "削除する", tweet_path(t.id), method: :delete %>
     </div>
     <% end %>
-  </div>
   </div>

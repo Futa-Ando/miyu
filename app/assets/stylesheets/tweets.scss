@@ -2,20 +2,67 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.haikei {
-    width: 100%;
-    height: 1024px;
-    background: linear-gradient(
-      to top,
-      #d59f62 0%,
-      #a9783f 50%,
-      #734e30 100%
-    );
-}
 
 .kensaku {
   margin-left: 1000px;
 }
+
+.about {
+  margin-top: 40px; 
+  margin-bottom: 30px;
+  text-align:center;
+  font-family: 'Book Antiqua', cursive;
+  color: white;
+  font-size: 25px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
+ 
+.font-small {
+  text-align:center;
+  margin-bottom: 30px;
+  color: white;
+  font-family: 'Noto Serif JP', sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.content{
+  margin-top: 55px; 
+  margin-bottom: 20px;
+  text-align:center;
+  font-family: 'Book Antiqua', cursive;
+  color: white;
+  font-size: 25px;
+}
+
+.food-pic{
+  background-image:url("food1.png");
+  background-size: 550px;
+  width: 500px;
+  height: 500px;
+  margin-left: 5%;
+  display: inline-block;
+  background-repeat:no-repeat
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+.food{
+  font-family: 'Sacramento', cursive;
+  font-size: 60px;
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+.food-small{
+  font-size: 15px;
+  font-family: 'Noto Serif JP', sans-serif;
+  line-height: 50px;
+}
+
 h3{
   color: white;
   text-align:center;
