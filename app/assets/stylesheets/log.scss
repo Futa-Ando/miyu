@@ -1,1 +1,63 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
+
+h1{
+    text-align:center;
+    color: #fff;
+    text-align: center;
+    font-family: 'Noto Serif JP', sans-serif;
+    background-image:url("senga2.png");
+    padding: 50px;
+    background-attachment: fixed;
+    }
+.setumei{
+    text-align: center;
+    color: #fff;
+    margin: 20px;
+}   
+.field {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+   }
+input[type="email"] {
+    height: 20px;
+    width: 200px;
+}
+input[type='email']:focus {
+      border: 3px solid #734e30;
+      outline: none;
+      width: 200px;
+}
+input[type="password"] {
+    height: 20px;
+    width: 200px;
+}
+input[type='password']:focus {
+      border: 3px solid #734e30;
+      outline: none;
+      width: 200px;
+}
+.actions{
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 30px;
+  
+}
+.actions a{
+    color: #734e30;
+}
+
+input[type="submit"] {
+    width: 150px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #734e30;
+    color: #fff;
+    border: none;
+    position:relative; 
+}
+input[type="submit"]:hover{
+    background-color: #fff;
+    color: #734e30;
+
+}
