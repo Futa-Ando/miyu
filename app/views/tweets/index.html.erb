@@ -1,27 +1,28 @@
 <%= stylesheet_link_tag 'tweets', :media => "all" %>
-
-<div class="kensaku">
-  <h3>投稿を検索</h3>
-  <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-    <%= text_field_tag :search %>
-    <%= submit_tag '検索する'  %>
-  <% end %>
+<div class="senga">
+  <div class="kensaku">
+    <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag '投稿を検索'  %>
+    <% end %>
+  </div>
+  <p class="about">
+    <b>About  Enjoyalone</b>
+  </p>
+  <p class="font-small">
+  「おひとり様ですか？」
+  <br>
+  こう聞かれた経験がない方へ
+  <br>
+  たまには自分だけの空間・時間を楽しんでみてはどうですか？
+  <br>
+  このサイトは「おひとり様」に挑戦したい、もっと楽しみたい人のためのコミュニティです。
+  <br>
+  あなただけの「1人○○」を見つけてみましょう。
+  <br><br><br>
+  </p>
 </div>
 
-<p class="about">
-  <b>About  Enjoyalone</b>
-</p>
-<p class="font-small">
-「おひとり様ですか？」
-<br>
-こう聞かれた経験がない方へ
-<br>
-たまには自分だけの空間・時間を楽しんでみてはどうですか？
-<br>
-このサイトは「おひとり様」に挑戦したい、もっと楽しみたい人のためのコミュニティです。
-<br>
-あなただけの「1人○○」を見つけてみましょう。
-</p>
 
 <p class="content">
   <b>Content</b>
@@ -29,10 +30,11 @@
 
 <div class="food-pic">
 </div>
-
 <div class="food">
   <p>Food</p>
   <p class="food-small">
+  ――飲食――
+  <br>
   「1人ランチ」や「1人焼肉」、「1人飲み」など
   <br>
   普段誰かと足を運んで会話をしながら飲食する機会が多いのでは？
@@ -41,16 +43,73 @@
   </p>
 </div>
 
+<div class="trip">
+  <p>Travel</p>
+  <p class="trip-small">
+  ――旅行――
+  <br>
+ 「1人旅」や「1人日帰り旅行」など行先は国内・国外と多くあります。
+  <br>
+  普段は誰かと計画を立てて行く楽しみもあると思いますが、
+  <br>
+  たまには自分だけで好きなように計画を立てて充実した旅にして見ては？ 
+  </p>
+</div>
+<div class="trip-pic">
+</div>
 
-<h3>Tweet一覧</h3>
+<div class="indoor-pic">
+</div>
+<div class="indoor">
+  <p>Indoor</p>
+  <p class="indoor-small">
+  ――インドア――
+ <br>
+ 「1人映画」や「1人美術館巡り」、「1人カラオケ」など室内での1人時間。
+ <br>
+ 自分の趣味を自分だけで楽しんでみる時間をつくってみてはどうでしょうか。
+ <br>
+ 好きなことを好きな時に好きなだけ楽しみましょう。きっと充実した時間になるはず。
+ </p>
+</div>
+
+<div class="outdoor">
+  <p>Outdoor</p>
+  <p class="outdoor-small">
+  ――アウトドア――
+  <br>
+  「1人キャンプ」や「1人ゴルフ」、「1人ドライブ」など屋外での1人時間。
+  <br>
+  外で活動するときは誰かと汗を流したり自然を楽しむのもいいですが、
+  <br>
+  自分1人だけの時間と空間で外の世界を楽しんでみては？
+  </p>
+</div>
+<div class="outdoor-pic">
+</div>
+
+<div class="itiran">
+<p>Tweet一覧</p>
+</div>
 
   <div class="tweets-container">
     <% @tweets.each do |t| %>
       <div class="tweet">
-        <%= image_tag t.image_url, size: "250x200" if t.image? %>
-        <%= t.user.name %>
-        <%= t.title %>
-        <%= t.body %>
+      <div class="card">
+      <%= t.user.name %>
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <div class="card-body">
+      <h5 class="card-title"><%= t.title %></h5>
+      
+    <div class="day">
+      <%= t.created_at %><br>
+    </div>
+    <div class="fbtn">
+    <div class="link">
+      <%= link_to "詳細", tweet_path(t.id) %>
+      <%= link_to "編集", edit_tweet_path(t.id) %>
+      <%= link_to "削除", tweet_path(t.id), method: :delete %>
+    </div>
         <% if user_signed_in? %>
         <% if current_user.already_liked?(t) %>
             <%= link_to tweet_like_path(id: t.id, tweet_id: t.id), method: :delete do %>
@@ -61,15 +120,14 @@
               <i class="far fa-heart"></i><%= t.likes.count %>
             <% end %>
         <% end %>
-    <% else %>
-      <i class="far fa-heart"></i><%= t.likes.count %>
-      <a href="/users/<%= t.user.id %>"><%= t.user.name %></a>
-    <% end %>
-
-        <%= t.created_at %>
-        <%= link_to "詳細へ", tweet_path(t.id) %>
-        <%= link_to "編集する", edit_tweet_path(t.id) %>
-        <%= button_to "削除する", tweet_path(t.id), method: :delete %>
-    </div>
-    <% end %>
+        <% else %>
+           <i class="far fa-heart"></i><%= t.likes.count %>
+          <a href="/users/<%= t.user.id %>"><%= t.user.name %></a>
+          </div>
+        <% end %>
+        </div>
+        </div>  
   </div>
+<% end %>
+
+        

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
+
+h1{
+ color: white;
+ text-align: center;
+ font-family: 'Noto Serif JP', sans-serif;
+ background-image:url("senga2.png");
+padding: 50px;
+background-attachment: fixed;
+}
+.syoukai{
+    border: 1px solid white;
+    padding: 10px;
+    margin: 20px;
+    display: inline-block;
+
+  }
+  .syoukai2{
+    border: 1px solid white;
+    padding: 10px;
+    margin: 20px;
+    margin-right: 50px;
+    display: inline-block;
+
+  }
+
+.syoukai p{
+    color: white;
+    text-align: center;
+}
+.syoukai2 p{
+    color: white;
+    text-align: center;
+}
+
+.tweets-container{
+font-family: 'Noto Serif JP', sans-serif;
+margin-bottom: 30px;
+display: flex;
+flex-wrap: wrap;
+
+}
+    
+.tweet{
+display: flex;
+flex-wrap: wrap;
+}
+.card{
+border: 3px solid #734e30;
+margin: 10px;
+padding: 10px;
+width: 200px;
+color: #734e30;
+}
+.card-title{
+margin: 7px;
+}
+.day{
+margin-bottom: 7px;
+}
+.card img {
+width: 150px;
+object-fit: contain;
+display: block;
+margin: 0 auto;
+}
+.fbtn{
+display: flex;
+}
+.fbtn a{
+color: #734e30;
+text-decoration: none;
+}
+
+.link{
+margin-right: 10px;
+font-family: 'Noto Serif JP', sans-serif;
+
+}
+.link a {
+color: #734e30;
+font-weight: 600;
+text-decoration: none;
+border: 2px solid #734e30;
+border-radius: 30px;
+padding: 5px;
+font-size: 13px;
+transition: 0.5s;
+}
+.link a:hover{
+background-color:#734e30;
+color: #d59f62;
+}
+

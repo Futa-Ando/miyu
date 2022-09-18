@@ -1,38 +1,44 @@
-<h1>1人○○を楽しむ! in鹿児島</h1>
+<%= stylesheet_link_tag 'shows', :media => "all" %>
+
 <h3>Tweet詳細</h3>
-<div class="tweet">
-  <p><%= @tweet.title %></p>
-  <p><%= @tweet.body %></p>
-  <p><%= @tweet.created_at %></p>
-  <% if user_signed_in? %>
-      <% if current_user.already_liked?(@tweet) %>
-          <%= link_to tweet_like_path(@tweet), method: :delete do %>
-            <i class="fas fa-heart"></i><%= @tweet.likes.count %>
-          <% end %>
-      <% else %>
-          <%= link_to tweet_likes_path(@tweet), method: :post do %>
-            <i class="far fa-heart"></i><%= @tweet.likes.count %>
-          <% end %>
-      <% end %>
-  <% else %>
-  <i class="far fa-heart"></i><%= @tweet.likes.count %>
-  <% end %>
+<div class="syousai">
+  <div class="tweet">
+    <p>user <%= @tweet.user.name %></p>
+    <p>title <%= @tweet.title %></p>
+    <p>tweet <%= @tweet.body %></p>
+    <p><%= @tweet.created_at %></p>
+    <% if user_signed_in? %>
+        <% if current_user.already_liked?(@tweet) %>
+            <%= link_to tweet_like_path(@tweet), method: :delete do %>
+              <i class="fas fa-heart"></i><%= @tweet.likes.count %>
+            <% end %>
+        <% else %>
+            <%= link_to tweet_likes_path(@tweet), method: :post do %>
+              <i class="far fa-heart"></i><%= @tweet.likes.count %>
+            <% end %>
+        <% end %>
+    <% else %>
+    <i class="far fa-heart"></i><%= @tweet.likes.count %>
+    <% end %>
+  </div>
+  <div class="gazou">
+  <%= image_tag @tweet.image_url, size: "250x200" if @tweet.image? %>
+  </div>
 </div>
 
-<h2>いいねしたユーザー</h2>
+<h4>いいねしたユーザー</h4>
 <% @tweet.liked_users.each do |user| %>
   <li><%= user.name %></li>
 <% end %>
 
 <div class="comment-wrapper">
-  <p>コメント一覧</p>
+  <h4>コメント一覧</h4>
   <% @comments.each do |c| %>
     <div>
       <%= c.user.name unless c.user.blank? %>
-      <br>
       <%= c.content %>
     </div>
-      <br>
+      
   <% end %>
 
   <% if user_signed_in? %>

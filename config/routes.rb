@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
-  root "tweets#index"
+  root 'tweets#index'
   get 'ranks/index' => 'ranks#index'
   get 'lectures/index'  => 'lectures#index'
   get 'lectures/new'  => 'lectures#new'

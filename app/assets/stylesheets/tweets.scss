@@ -2,9 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.senga{
+  background-image:url("senga2.png");
+  width: 100%;
+  background-attachment: fixed;
+}
 
 .kensaku {
   margin-left: 1000px;
+  
 }
 
 .about {
@@ -28,7 +34,7 @@
 }
 
 .content{
-  margin-top: 55px; 
+  margin-top: 50px; 
   margin-bottom: 20px;
   text-align:center;
   font-family: 'Book Antiqua', cursive;
@@ -43,7 +49,7 @@
   height: 500px;
   margin-left: 5%;
   display: inline-block;
-  background-repeat:no-repeat
+  background-repeat:no-repeat;
 
 }
 
@@ -54,7 +60,7 @@
   color: white;
   display: inline-block;
   vertical-align: top;
-  margin-left: 20px;
+  margin-left: 40px;
   margin-top: 50px;
 }
 .food-small{
@@ -62,10 +68,155 @@
   font-family: 'Noto Serif JP', sans-serif;
   line-height: 50px;
 }
-
-h3{
+.trip{
+  font-family: 'Sacramento', cursive;
+  font-size: 60px;
   color: white;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 150px;
+  margin-top: 10px;
+}
+.trip-small{
+  font-size: 15px;
+  font-family: 'Noto Serif JP', sans-serif;
+  line-height: 50px;
+}
+.trip-pic{
+  background-image:url("trip1.png");
+  background-size: 550px;
+  width: 500px;
+  height: 500px;
+  margin-left: 0%;
+  display: inline-block;
+  background-repeat:no-repeat;
+  vertical-align: top;
+  margin-top: -90px;
+}
+.indoor-pic{
+  background-image:url("in1.png");
+  background-size: 600px;
+  width: 500px;
+  height: 500px;
+  margin-left: 3%;
+  display: inline-block;
+  background-repeat:no-repeat;
+  margin-top: -50px;
+}
+.indoor{
+  font-family: 'Sacramento', cursive;
+  font-size: 60px;
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 75px;
+  margin-top: 30px;
+}
+.indoor-small{
+  font-size: 15px;
+  font-family: 'Noto Serif JP', sans-serif;
+  line-height: 50px;
+}
+.outdoor{
+  font-family: 'Sacramento', cursive;
+  font-size: 60px;
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 150px;
+  margin-top: 30px;
+}
+.outdoor-small{
+  font-size: 15px;
+  font-family: 'Noto Serif JP', sans-serif;
+  line-height: 50px;
+}
+.outdoor-pic{
+  background-image:url("out1.png");
+  background-size: 550px;
+  width: 500px;
+  height: 500px;
+  margin-left: 0%;
+  display: inline-block;
+  background-repeat:no-repeat;
+  vertical-align: top;
+  margin-top: -50px;
+}
+
+
+.itiran{
+  margin-top: 40px; 
   text-align:center;
-  font-weight: lighter;
-  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'  
+  font-family: 'Book Antiqua', cursive;
+  color: white;
+  font-size: 25px;
+  background-color: #d59f62;
+  background-image:url("haikei.png");
+  background-attachment: fixed;
+
+
+
+}
+.tweets-container{
+  font-family: 'Noto Serif JP', sans-serif;
+  margin-bottom: 30px;
+  background-color: #d59f62;
+  background-image:url("haikei.png");
+  background-attachment: fixed;
+
+
+
+
+}
+.tweet{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+  border: 3px solid #734e30;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  color: #734e30;
+  background-color: #d59f62;
+}
+.card-title{
+  margin: 7px;
+}
+.day{
+  margin-bottom: 7px;
+}
+.card img {
+  width: 150px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+.fbtn{
+  display: flex;
+}
+.fbtn a{
+  color: #734e30;
+  text-decoration: none;
+}
+
+.link{
+  margin-right: 10px;
+  font-family: 'Noto Serif JP', sans-serif;
+
+}
+.link a {
+  color: #734e30;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #734e30;
+  border-radius: 30px;
+  padding: 5px;
+  font-size: 13px;
+  transition: 0.5s;
+}
+.link a:hover{
+  background-color:#734e30;
+  color: #d59f62;
 }
