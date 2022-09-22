@@ -1,4 +1,12 @@
 <%= stylesheet_link_tag 'tweets', :media => "all" %>
+
+<div class="slide_cont">
+<img src="images/logo.png">
+<img src="trip.jpg">
+<img src="trip2.jpg">
+<img src="drink.jpg">
+</div>
+
 <div class="senga">
   <div class="kensaku">
     <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
@@ -102,7 +110,7 @@
       <h5 class="card-title"><%= t.title %></h5>
       
     <div class="day">
-      <%= t.created_at %><br>
+      <%= t.created_at.strftime('%Y/%m/%d')%><br>
     </div>
     <div class="fbtn">
     <div class="link">

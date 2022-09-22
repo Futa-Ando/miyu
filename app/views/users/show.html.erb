@@ -3,16 +3,15 @@
  <h1>My Page</h1>
 
  <div class="syoukai">
-  <p>user name : <%= @user.name %></p>
- </div>
- <div class="syoukai2">
-  <p>profile : <%= @user.profile %></p>
- </div>
-
-<br>
-<% if current_user.id == @user.id %>
-  <%= link_to "編集する", edit_user_registration_path %>
-<% end %>
+    <p>〈 Profile 〉</p>
+    <p>Name : <%= @user.name %></p>
+    <p>Coment : <%= @user.profile %></p>
+    <div class="hensyuu">
+    <% if current_user.id == @user.id %>
+      <%= link_to "編集する", edit_user_registration_path %>
+    <% end %>
+    </div>
+</div>
 
 <h2>My Tweets</h2>
 <div class="tweets-container">
@@ -24,7 +23,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= t.title %></h5>
         <div class="day">
-          <%= t.created_at %><br>
+          <%= t.created_at.strftime('%Y/%m/%d')%><br>
         </div>
         <div class="fbtn">
           <div class="link">
@@ -50,7 +49,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= t.title %></h5>
         <div class="day">
-          <%= t.created_at %><br>
+          <%= t.created_at.strftime('%Y/%m/%d')%><br>
         </div>
         <div class="fbtn">
           <div class="link">
@@ -65,7 +64,5 @@
   <% end %>
 </div>
 
-<!-- ここまで-->
 
-<%= link_to "Tweet一覧に戻る", tweets_path %>
 

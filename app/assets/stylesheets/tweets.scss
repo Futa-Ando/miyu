@@ -2,6 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.slide_cont{
+   white-space:nowrap;
+   width: 100%;
+   height: 600px;
+   overflow: hidden;
+   background-attachment: fixed;
+  }
+.slide_cont img{
+  margin: 0;
+  padding: 0;
+  width: inherit;
+  height: 600px;
+  border: none;
+  
+}
+
+@keyframes slide_cont4 {
+  0% { margin-left: 0; }
+  33% { margin-left: -100%; }
+  66% { margin-left: -200%; }
+  100% { margin-left: -300%; }
+}
+
+.slide_cont > :first-child {
+  animation-name: slide_cont4;
+  animation-duration: 5s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
+
+      
+
 .senga{
   background-image:url("senga2.png");
   width: 100%;
@@ -170,7 +202,6 @@
 }
 .tweet{
   display: flex;
-  flex-wrap: wrap;
 }
 
 .card{
@@ -195,6 +226,8 @@
 }
 .fbtn{
   display: flex;
+  flex-wrap: wrap;
+
 }
 .fbtn a{
   color: #734e30;

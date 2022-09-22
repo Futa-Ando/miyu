@@ -1,10 +1,11 @@
 <%= stylesheet_link_tag 'ranks', :media => "all" %>
-
+<h1>Like Ranking</h1>
 <div class="tweets-container">
-  <% @rank_tweets.each do |t| %>
+  <% @rank_tweets.each.with_index(1) do |t,i| %>
     <div class="tweet">
+      第<%= i %>位
       <%= image_tag t.image_url, size: "250x200" if t.image? %>
-      <%= t.user.email %>
+      <%= t.user.name %>
       <%= t.title %>
       <%= t.body %>
       <% if user_signed_in? %>
@@ -20,7 +21,7 @@
       <% else %>
           <i class="far fa-heart"></i><%= t.likes.count %>
       <% end %>
-      <%= t.created_at %>
+      <%= t.created_at.strftime('%Y/%m/%d')%>
       <%= link_to "詳細へ", tweet_path(t.id) %>
       <%= link_to "編集する", edit_tweet_path(t.id) %>
       <%= button_to "削除する", tweet_path(t.id), method: :delete %>

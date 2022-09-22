@@ -1,21 +1,21 @@
 <%= stylesheet_link_tag 'news', :media => "all" %>
 
+<h1>New Post</h1>
 <div class="new">
-  <div class="sinki">
-  <p>新規Tweet</p>
-  </div>
   <%= form_for @tweet do |f| %>
     <div class="field">
-      <%= f.label :title %>
-      <%= f.text_field :title, :size => 140 %>
-      <%= f.label :body %>
-      <%= f.text_field :body, :size => 140 %>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %><br>
+    </div>
+    <div class="field">
+      <%= f.label :body %><br>
+      <%= f.text_area :body , class:"body" ,:size=>"50x10" %>
     </div>
     <div class="field">
       <%= f.label :image %>
       <%= f.file_field :image %>
     </div>
+    <br>
     <%= f.submit "Tweetする" %>
   <% end %>
-  <%= link_to "Tweet一覧に戻る", tweets_path %>
 </div>
