@@ -11,4 +11,51 @@ h1{
     background-image:url("senga2.png");
     padding: 50px;
     background-attachment: fixed;
-    }
+}
+.midasi{
+    color: #fff;
+    text-align: center;
+    margin: 20px;
+}
+.tweet{
+ margin-left: 350px;
+ border: 3px solid #734e30;
+ margin-bottom:20px;
+ width: 50%;
+ display: inline-block;
+ vertical-align: top;
+ height: 230px;
+ color: #fff;
+}
+.tweet b{
+font-size: 30px;
+margin: 10px;
+background-color: #734e30;
+padding: 5px;
+}
+.tweet p{
+    margin-left: 10px;
+    line-height: 15px;
+}
+.foto{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 340px;
+    margin-bottom: 20px;
+    margin-top: -190px; 
+}
+.tweet a{
+    color: #734e30;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #734e30;
+  border-radius: 30px;
+  padding: 5px;
+  font-size: 13px;
+  transition: 0.5s;
+}
+.tweet a:hover{
+    background-color:#734e30;
+  color: #d59f62;
+
+}
