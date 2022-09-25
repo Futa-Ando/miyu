@@ -1,24 +1,90 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
 
 h1{
- color: white;
- text-align: center;
-}
-.syousai{
- border: 2px solid white;
- margin-right: 200px;
- margin-left: 200px;
- height:500px ;
-}
+  text-align:center;
+  color: #fff;
+  text-align: center;
+  font-family: 'Noto Serif JP', sans-serif;
+  background-image:url("senga2.png");
+  padding: 50px;
+  background-attachment: fixed;
+  }
+  .tweets-container{
+    display: flex;
+  }
 .tweet{
-  display: inline-block;
-  vertical-align: top;
-  
-}
-.gazou{
-    display: inline-block;
-    margin-right: 0%;
-    vertical-align: top;
-    
-  
-}
+  margin-left: 350px;
+  border: 3px solid #734e30;
+  margin-bottom:20px;
+  width: 70%;
+  color: #fff;
+ }
+
+ .tweet b{
+ font-size: 30px;
+ margin: 10px;
+ background-color: #734e30;
+ padding: 5px;
+ }
+ .tweet p{
+     margin-left: 10px;
+     line-height: 15px;
+ }
+ .foto{
+     display: inline-block;
+     vertical-align: top;
+     margin-left: 340px;
+     margin-bottom: 20px;
+     margin-top: -190px; 
+ }
+ .tweet a{
+     color: #734e30;
+   font-weight: 600;
+   text-decoration: none;
+   border: 2px solid #734e30;
+   border-radius: 30px;
+   padding: 5px;
+   font-size: 13px;
+   transition: 0.5s;
+ }
+ .tweet a:hover{
+     background-color:#734e30;
+   color: #d59f62;
+ 
+ }
+ h2{
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+ }
+ .comment{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 9px 12px;
+  color: white;
+  width: 30%;
+  font-size: 13px;
+  background: #734e30;
+  border-radius: 9px;
+  margin-left: 34%;
+ }
+ .comment::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -23px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #734e30;
+ }
+ h3{
+  color: #fff;
+  text-align: center;
+  margin: 10px;
+ }
+ .iine{
+  margin-bottom: 30px;
+  color: #fff;
+ }
