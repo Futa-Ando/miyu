@@ -12,14 +12,17 @@ class TweetsController < ApplicationController
 
     def new
         @tweet = Tweet.new
+        @category = Category.where(iden: 0)
     end
     def create
-        tweet = Tweet.new(tweet_params)
-        tweet.user_id = current_user.id
-        if tweet.save
+        @tweet = Tweet.new(tweet_params)
+        @genre = @tweet.genre
+        @category = Category.where(iden: @genre)
+        @tweet.user_id = current_user.id
+        if @tweet.save
           redirect_to :action => "index"
         else
-          redirect_to :action => "new"
+          render "tweets/new"
         end
     end
     def show
@@ -46,6 +49,6 @@ class TweetsController < ApplicationController
     
     private
     def tweet_params
-      params.require(:tweet).permit(:body, :title, :image)
+      params.require(:tweet).permit(:body, :title, :image, :genre)
     end
 end

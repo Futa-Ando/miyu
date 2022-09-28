@@ -6,6 +6,11 @@
   <div class="new">
     <%= form_for @tweet do |f| %>
       <div class="field">
+        <% @category.each do |t| %>
+          <%= f.radio_button :genre, t.id %><%= t.name %>
+        <% end %>
+      </div>
+      <div class="field">
         <%= f.label :title %><br>
         <%= f.text_field :title %><br>
       </div>
